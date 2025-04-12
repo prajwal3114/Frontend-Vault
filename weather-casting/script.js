@@ -7,8 +7,8 @@ button.addEventListener("click", async function () {
         alert("Invalid input");
         return;
     }
-    const apiKey = "8349fc1e7bed7c02d02e243938dfb56a"; // Replace with your API key
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${WEATHER_API_KEY}&units=metric`;
 
     try {
         const response = await fetch(url);
@@ -20,9 +20,9 @@ button.addEventListener("click", async function () {
         }
 
         displayWeather(data); 
-
     } catch (error) {
-        alert("Error fetching data");
+        alert("Error fetching weather data. Please try again.");
+        console.error(error);
     }
 });
 
