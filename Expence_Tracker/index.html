@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Budget Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-amber-100 min-h-screen flex items-center justify-center p-4">
+  <div class="w-full max-w-5xl bg-white shadow-lg rounded-2xl p-6 space-y-8">
+    
+    <!-- Header -->
+    <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800">Budget Tracker</h1>
+    
+    <!-- Budget & Expense Input -->
+    <div class="flex flex-col lg:flex-row gap-6">
+      
+      <!-- Budget Box -->
+      <div class="flex-1 bg-amber-50 p-5 rounded-xl shadow-md">
+        <h2 class="text-xl font-semibold mb-3">Set Budget</h2>
+        <input type="number" id="budgetInput" class="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Enter your budget">
+        <button id="budgetbut" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg w-full cursor-pointer">Set Budget</button>
+      </div>
+
+      <!-- Expense Box -->
+      <div class="flex-1 bg-amber-50 p-5 rounded-xl shadow-md">
+        <h2 class="text-xl font-semibold mb-3">Add Expense</h2>
+        <input type="text" id="expenseName" class="w-full p-3 border rounded-lg mb-3 focus:outline-none focus:ring-2 focus:ring-green-300" placeholder="Expense name">
+        <input type="number" id="expenseAmount" class="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-300" placeholder="Amount">
+        <button id="expensesbut"class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg w-full cursor-pointer">Add Expense</button>
+      </div>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+      <div class="bg-blue-100 p-5 rounded-xl shadow-md">
+        <h3 class="text-lg font-semibold text-blue-900">Total Budget</h3>
+        <p id="budgetshow" class="text-3xl font-bold text-blue-700 mt-2">₹0</p>
+      </div>
+      <div class="bg-red-100 p-5 rounded-xl shadow-md">
+        <h3 class="text-lg font-semibold text-red-900">Total Expenses</h3>
+        <p id="expensesshow" class="text-3xl font-bold text-red-700 mt-2">₹0</p>
+      </div>
+      <div class="bg-green-100 p-5 rounded-xl shadow-md">
+        <h3 class="text-lg font-semibold text-green-900">Remaining Balance</h3>
+        <p id="balanceshow" class="text-3xl font-bold text-green-700 mt-2">₹0</p>
+      </div>
+    </div>
+
+    <!-- Expense List Section -->
+    <div class="bg-gray-50 p-5 rounded-xl shadow-md">
+      <h2 class="text-xl font-semibold mb-3">Expense List</h2>
+      <ul id="here" class="list-disc list-inside text-gray-700 space-y-2">
+        <!-- Expenses will be dynamically added here -->
+      </ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
